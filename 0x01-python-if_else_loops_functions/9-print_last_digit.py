@@ -8,7 +8,7 @@ def print_last_digit(number):
     last_digit = number % 10
 
     # Print the last digit
-    print("The last digit of {} is: {}".format(number, last_digit))
+    print("{}".format(last_digit), end = '')
 
     # Return the value of the last digit
     return last_digit
