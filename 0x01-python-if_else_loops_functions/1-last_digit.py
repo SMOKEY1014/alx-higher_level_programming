@@ -9,10 +9,10 @@ last_digit = number_digit[-1]
 
 digit = int(last_digit)
 
-if (number <= -1):
+if (number <= -1 and last_digit != "0"):
     last_digit = "-" + last_digit
 
-print(f"Last digit of {number}, is {last_digit} and is ", end=" ")
+print(f"Last digit of {number} is {last_digit} and is", end=" ")
 
 if (digit) > 5:
     print(f"greater than 5")
