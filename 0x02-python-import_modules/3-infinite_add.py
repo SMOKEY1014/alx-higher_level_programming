@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 import sys
 
-""" This code works both for command-line and can be imported to another function"""
+""" This code works both for command-line and
+can be imported to another function"""
+
 
 def sum_of_args(string):
     # Split the string into a list of substrings
@@ -18,6 +20,7 @@ def sum_of_args(string):
             print("Invalid argument: {}".format(arg))
 
     return total_sum
+
 
 # Get the command-line arguments as a single string
 args_string = ' '.join(sys.argv[1:])
