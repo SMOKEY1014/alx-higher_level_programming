@@ -9,6 +9,8 @@ def print_list_integer(my_list=[]):
     for i in my_list:
         print("{:d}".format(i))
 """
+
+
 def print_reversed_list_integer(my_list=[]):
     # ensure the function doesn't raise any errors if list is empty
     if not my_list:
