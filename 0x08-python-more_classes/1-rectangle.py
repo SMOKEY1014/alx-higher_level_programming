@@ -30,7 +30,7 @@ class Rectangle:
     @width.setter  # setter method for width
     def width(self, value):
         # verify that value is an integer
-        if type(value) is not int or isinstance(value, (float, bool)):
+        if not isinstance(value, (int)):
             raise TypeError("width must be an integer")
 
         # check that value is >= 0
