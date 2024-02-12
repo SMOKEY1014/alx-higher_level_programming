@@ -2,6 +2,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -14,7 +15,7 @@ class Rectangle(Base):
     @property
     def width(self):
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -26,7 +27,7 @@ class Rectangle(Base):
     @property
     def height(self):
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -38,7 +39,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         if not isinstance(value, int):
@@ -50,7 +51,7 @@ class Rectangle(Base):
     @property
     def y(self):
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         if not isinstance(value, int):
@@ -61,17 +62,16 @@ class Rectangle(Base):
 
     def area(self):
         return self.width * self.height
-    
+
     def display(self):
         for g in range(self.y):
             print()
         for g in range(0, self.height):
-            print(" " *self.x + "#"* self.__width)
+            print(" " * self.x + "#" * self.__width)
 
     def __str__(self):
         """Return string representation of Rectangle"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
-    
 
     def update(self, *args, **kwargs):
 
@@ -83,4 +83,12 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-    
+
+    def to_dictionary(self):
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
