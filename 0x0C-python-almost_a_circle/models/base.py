@@ -34,8 +34,6 @@ import turtle
 import csv
 
 
-
-
 class Base:
     """
     Base class to manage id attribute in all future classes
@@ -59,7 +57,7 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-        
+
     @staticmethod
     def save_to_file(cls, list_objs):
         """Write JSON string representation of list_objs to a file"""
