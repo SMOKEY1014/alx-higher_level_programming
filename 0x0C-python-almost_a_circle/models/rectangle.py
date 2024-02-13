@@ -1,5 +1,27 @@
 #!/usr/bin/python3
 
+"""
+Rectangle Class Module that inherits from Base:
+
+Init Superclass' `id` (Base)
+Private instance attributes, each with its own public getter and setter:
+__width -> width, __height -> height, __x -> x, __y -> y
+Class constructor: def __init__(self, width, height, x=0, y=0, id=None):
+Contain public methods of area and display:
+def area(self): that returns the area value of the Rectangle instance
+def display(self): prints Rectangle instance to stdout with the `#` character
+:- improve display method to take care of x and y.
+Update Rectangle class by overriding the __str__ method
+so that it returns "[Rectangle] (<id>) <x>/<y> - <width>/<height>"
+Contain public method: def update(self, *args, **kwargs):
+that assigns a key/value argument to attributes: if *args,
+set attrs in this order arg1=id, arg2=width, arg3=height, arg4=x, arg5=y
+if no args given, set according to kwargs.
+Add public method def to_dictionary(self):
+that returns the dictionary representation of a Rectangle.
+"""
+
+
 from models.base import Base
 
 
