@@ -9,6 +9,6 @@
 -- the database name will be passed as an argument of the mysql command
 -- lists all shows in hbtn_0d_tvsows that have at least 1 genre linked
 
-USE hbtn_0d_tvshows;
 SELECT tv_shows.title, tv_show_genres.genre_id
+    INNER JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id 
     ORDER BY tv_shows.title, tv_show_genres.genre_id ASC;
