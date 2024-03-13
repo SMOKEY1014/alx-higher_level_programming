@@ -9,7 +9,7 @@
 -- results must be sorted in ascending order by the genre name
 -- can use only one SELECT statement
 -- the database name will be passed as an argument of the mysql command
-USE hbtn_0d_tvshows;
+
 SELECT tv_genres.name
       FROM tv_genres
 INNER JOIN tv_show_genres
