@@ -7,7 +7,7 @@ for (let i = 2; i < Arg.length; i++) {
   myArr.push(parseInt(Arg[i]));
 }
 
-if (myArr.length < 2) {
+if ((myArr.length === 1) || (myArr.length === 0)) {
   console.log(0);
   process.exit(0);
 }
