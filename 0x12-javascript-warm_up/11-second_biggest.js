@@ -8,6 +8,7 @@ for (let i = 2; i < Arg.length; i++) {
 }
 
 if (myArr.length < 2) {
+  console.log(0);
   process.exit(0);
 }
 
