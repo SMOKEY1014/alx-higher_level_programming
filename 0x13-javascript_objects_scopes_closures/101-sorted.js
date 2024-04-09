@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { dict } = require("./101-data");
+const { dict } = require('./101-data');
 
 const occurrencesDict = {};
 
