@@ -10,7 +10,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute SQL query to select all states and sort by id
-    cursor.execute("SELECT * FROM states ORDER BY id")
+    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
 
     # Fetch all rows using fetchall() method
     data = cursor.fetchall()
