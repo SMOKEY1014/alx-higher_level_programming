@@ -17,12 +17,6 @@ import sys
 import re
 
 
-def is_valid_state_name(state_name):
-    # Use a regular expression to check if the state name
-    # contains only letters and spaces.
-    return re.match("^[a-zA-Z ]+$", state_name) is not None
-
-
 if __name__ == "__main__":
 
     # Extract arguments
