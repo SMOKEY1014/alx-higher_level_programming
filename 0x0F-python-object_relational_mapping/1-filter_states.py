@@ -15,14 +15,15 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute SQL query to select all states and sort by id
-    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # Fetch all rows using fetchall() method
     data = cursor.fetchall()
 
     # Print the fetched result
     for row in data:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     # Disconnect from server
     cursor.close()
