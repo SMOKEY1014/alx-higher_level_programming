@@ -1,4 +1,17 @@
 #!/usr/bin/python3
+
+"""
+Script that displays all values in the states table of hbtn_0e_0_usa
+where name matches the provided argument, and is AFE from MySQL injection.
+Parameters for script: mysql username, mysql password, database name
+and state name searched.
+Must use the `MySQLdb` module.
+Script should connect to a MySQL server runnimg on `localhost` at port `3306`
+Must use `format` to create the SQL query with the user input.
+Results must be in ascending order by `states.id`.
+Code should not be executed when imported.
+"""
+
 import MySQLdb
 import sys
 import re
