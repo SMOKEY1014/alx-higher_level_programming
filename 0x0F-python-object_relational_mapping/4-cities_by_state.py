@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
 """
-Script that lists all cities from the database hbtn_0e_0_usa.
+Script that lists all cities from the database hbtn_0e_4_usa.
 Parameters for script: mysql username, mysql password, database name.
 Must use the `MySQLdb` module.
 Script should connect to a MySQL server runnimg on `localhost` at port `3306`
 Results must be in ascending order by `cities.id`.
+Can only use `execute()` once
 Code should not be executed when imported.
 """
 
@@ -25,7 +26,12 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute SQL query to select all cities and sort by id
-    cursor.execute("SELECT * FROM cities ORDER BY cities.id ASC")
+    cursor.execute(
+        """SELECT cities.id, cities.name, states.name
+        FROM states
+        INNER JOIN cities ON states.id = cities.state_id
+        ORDER BY cities.id ASC"""
+        )
 
     # Fetch all rows using fetchall() method
     data = cursor.fetchall()
