@@ -2,7 +2,7 @@
 
 """
 Script that displays all values in the states table of hbtn_0e_0_usa
-where name matches the provided argument, and is AFE from MySQL injection.
+where name matches the provided argument.
 Parameters for script: mysql username, mysql password, database name
 and state name searched.
 Must use the `MySQLdb` module.
@@ -14,26 +14,21 @@ Code should not be executed when imported.
 
 import MySQLdb
 import sys
-import re
-
 
 if __name__ == "__main__":
 
+    # add check to see if number of arguments is correct
+    if len(sys.argv) != 5:
+        print("Usage: {} <username> <password> <database> <state_name>".format(
+            sys.argv[0]))
+        exit()
     # Extract arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
     state_name = sys.argv[4]
 
-    # Check if the number of command-line arguments is correct
-    if len(sys.argv) != 5:
-        u = "<username>"
-        pw = "<password>"
-        db = "<database>"
-        print("Usage: {} {} {} {} <state_name>".format(sys.argv[0], u, pw, db))
-        sys.exit(1)
-
-    # Proceed with connecting to the database and executing the query...
+    # Connect to MySQL database
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -44,11 +39,10 @@ if __name__ == "__main__":
     # Create a cursor object using cursor() method
     cursor = db.cursor()
 
-    # Execute SQL query to select states matching the
-    # provided name and sort by id
+    # Execute SQL query to select states matching
+    # the provided name and sort by id
     query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
-    nameState = (re.match("^[a-zA-Z ]+$", state_name) is not None)
-    cursor.execute(query, (nameState,))
+    cursor.execute(query, (state_name,))
 
     # Fetch all rows using fetchall() method
     data = cursor.fetchall()
