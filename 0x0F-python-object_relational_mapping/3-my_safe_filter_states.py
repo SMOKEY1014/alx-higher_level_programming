@@ -33,11 +33,6 @@ if __name__ == "__main__":
         print("Usage: {} {} {} {} <state_name>".format(sys.argv[0], u, pw, db))
         sys.exit(1)
 
-    # Validate the state name argument
-    if not is_valid_state_name(state_name):
-        print("Error: Invalid state name")
-        sys.exit(1)
-
     # Proceed with connecting to the database and executing the query...
     db = MySQLdb.connect(
         host="localhost",
