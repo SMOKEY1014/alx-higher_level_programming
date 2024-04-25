@@ -4,10 +4,10 @@
 #A header variable X-School-User-Id must be sent with the value 98
 
 
-# Check if a URL argument is provided
-if [ -z "$1" ]; then
-  echo "Error: Please provide a URL as an argument." >&2
-  exit 1
+# Check if the user provided a URL as an argument
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <URL>"
+    exit 1
 fi
 
 # Define the URL from the first argument

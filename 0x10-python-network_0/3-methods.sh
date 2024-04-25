@@ -1,10 +1,10 @@
 #!/bin/bash
 # A Bash script that takes in a URL and displays all HTTP methods the server will accept.
 
-# Check if a URL argument is provided
-if [ -z "$1" ]; then
-  echo "Error: Please provide a URL as an argument." >&2
-  exit 1
+# Check if the user provided a URL as an argument
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <URL>"
+    exit 1
 fi
 
 # Define the URL from the first argument
