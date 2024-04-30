@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-""" Write a Python script that fetches https://alx-intranet.hbtn.io/status
-    Using the package 'requests'
+"""Script that takes in a URL, sends a request to the URL
+and displays the body of the response (decoded in utf-8).
+Usage: ./4-hbtn_status.py | cat -e
+  - Handles HTTP errors.
 """
+
 import requests
 
 
