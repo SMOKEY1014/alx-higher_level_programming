@@ -3,8 +3,8 @@ import urllib.request
 
 url = 'https://alx-intranet.hbtn.io/status'
 
-with urllib.request.urlopen(url) as response:
-    html = response.read()
+with urllib.request.urlopen(url) as output:
+    html = output.read()
     print("Body response:")
     print("\t- type:", type(html))
     print("\t- content:", html)
