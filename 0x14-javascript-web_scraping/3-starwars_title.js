@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
-const request = require("request");
+const request = require('request');
 const filmID = process.argv[2];
 const url = `https://swapi-api.alx-tools.com/api/films/${filmID}`;
 
 if (!filmID) {
-  console.error("Usage: node 3-starwars_title.js <filmID>");
+  console.error('Usage: node 3-starwars_title.js <filmID>');
   process.exit(1);
 }
 
@@ -18,7 +18,7 @@ request(url, (err, responce, body) => {
   }
 
   if (err) {
-    console.error("Error:", err);
+    console.error('Error:', err);
     return;
   }
 
@@ -26,6 +26,6 @@ request(url, (err, responce, body) => {
     const data = JSON.parse(body);
     console.log(data.title);
   } catch (error) {
-    console.error("Failed to parse responce:", error);
+    console.error('Failed to parse responce:', error);
   }
 });
