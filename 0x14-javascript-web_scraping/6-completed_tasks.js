@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 // Require the 'request' module
-const request = require("request");
+const request = require('request');
 
 // Get the URL from the command line arguments
 const apiUrl = process.argv[2];
@@ -35,6 +35,6 @@ request(apiUrl, (error, response, body) => {
     console.log(completedTasksByUser);
   } else {
     // if the response status code is not 200, output an error message
-    console.log("Error code: " + response.statusCode);
+    console.log('Error code: ' + response.statusCode);
   }
 });
