@@ -14,7 +14,9 @@ request(url, (err, responce, body) => {
     return;
   }
   if (responce.statusCode != 200) {
-    console.error(`Failed to fertchdata, Status Code: ${responce.statusCode}`);
+    console.error(
+      `Failed to fetching data, Status Code: ${responce.statusCode}`
+    );
     return;
   }
   try {

@@ -11,7 +11,9 @@ if (!filmID) {
 
 request(url, (err, responce, body) => {
   if (responce.statusCode != 200) {
-    console.error(`Failed to fertchdata, Status Code: ${responce.statusCode}`);
+    console.error(
+      `Failed to fetching data, Status Code: ${responce.statusCode}`
+    );
     return;
   }
 
