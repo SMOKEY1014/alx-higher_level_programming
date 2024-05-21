@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
-const request = require("request");
+const request = require('request');
 
 // Construct the SWAPI URL based on the film ID from the command line arguments
-const apiUrl = "https://swapi-api.alx-tools.com/api/films/" + process.argv[2];
+const apiUrl = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 
 // Make a request to the SWAPI URL
 request(apiUrl, function (error, response, body) {
@@ -18,7 +18,7 @@ request(apiUrl, function (error, response, body) {
 });
 
 // Function to recursively print characters
-function printCharacters(characters, index) {
+function printCharacters (characters, index) {
   // Make a request to fetch information about the character at the given index
   request(characters[index], function (error, response, body) {
     // Check for errors in the request
