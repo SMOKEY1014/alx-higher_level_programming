@@ -1,24 +1,26 @@
 #!/usr/bin/node
 
-const request = require('request');
+const request = require("request");
 const url = process.argv[2];
 
 if (!url) {
-  console.error('Usage: node 2-statuscode.js <URL>');
+  console.error("Usage: node 2-statuscode.js <URL>");
   process.exit(1);
 }
 
 request(url, (err, responce, body) => {
   if (err) {
-    console.error('Error:', err);
+    console.error("Error:", err);
     return;
   }
+
   if (responce.statusCode !== 200) {
     console.error(
       `Failed to fetching data, Status Code: ${responce.statusCode}`
     );
     return;
   }
+
   try {
     const data = JSON.parse(body);
     const films = data.results;
@@ -27,7 +29,7 @@ request(url, (err, responce, body) => {
     films.forEach((film) => {
       if (
         film.characters.includes(
-          'https://swapi-api.alx-tools.com/api/people/18/'
+          "https://swapi-api.alx-tools.com/api/people/18/"
         )
       ) {
         count++;
@@ -36,6 +38,6 @@ request(url, (err, responce, body) => {
 
     console.log(`${count}`);
   } catch (error) {
-    console.error('Failed to parse responce:', error);
+    console.error("Failed to parse responce:", error);
   }
 });
